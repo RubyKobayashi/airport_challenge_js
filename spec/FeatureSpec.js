@@ -14,11 +14,20 @@ describe ('FeatureTest', function(){
 
 
 
-  it('airport can land planes and confirm it has landded', function(){
+  it('airport can land planes and confirm it has landed', function(){
     airport.land(plane);
   expect(airport.planes()).toEqual([plane]);
     airport.land(plane2);
   expect(airport.planes()).toEqual([plane, plane2])
+  });
+
+
+  it('airport can take off planes and confirm it has taken off', function(){
+    airport.land(plane);
+    airport.land(plane2);
+    airport.takeOff(plane);
+    airport.takeOff(plane2);
+  expect(airport.planes()).toEqual([]);
   });
 
 
